@@ -2,13 +2,14 @@ FROM bestwu/deepin:panda
 LABEL maintainer='Peter Wu <piterwu@outlook.com>'
 
 RUN echo 'deb http://mirrors.kernel.org/deepin panda main non-free contrib' > /etc/apt/sources.list && \
+    dpkg --add-architecture i386 && \
     apt-get update && \
     apt-get install -y --no-install-recommends locales && \
     echo 'zh_CN.UTF-8 UTF-8' > /etc/locale.gen && \
     locale-gen && \
     echo -e 'LANG="zh_CN.UTF-8"\nLANGUAGE="zh_CN:zh"\n' > /etc/default/locale && \
     source /etc/default/locale && \
-    apt-get install -y --no-install-recommends fonts-wqy-microhei deepin-wine deepin-wine-helper deepin-wine-uninstaller && \
+    apt-get install -y --no-install-recommends fonts-wqy-microhei deepin-wine deepin-wine32 deepin-wine32-preloader deepin-wine-helper deepin-wine-uninstaller && \
     apt-get -y autoremove && apt-get clean -y && apt-get autoclean -y && \
     rm -rf var/lib/apt/lists/* var/cache/apt/* var/log/*
 
