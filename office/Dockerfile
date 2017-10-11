@@ -15,13 +15,13 @@ RUN dpkg --add-architecture i386 && \
     locale-gen && \
     echo -e 'LANG="zh_CN.UTF-8"\nLANGUAGE="zh_CN:zh"\n' > /etc/default/locale && \
     source /etc/default/locale && \
-    apt-get install -y --no-install-recommends wget software-properties-common apt-transport-https fonts-wqy-microhei && \
-    wget -nc https://dl.winehq.org/wine-builds/Release.key && \
+    apt-get install -y --no-install-recommends wget software-properties-common fonts-wqy-microhei && \
+    wget -nc http://dl.winehq.org/wine-builds/Release.key && \
     apt-key add Release.key && \
-    apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/ && \
+    apt-add-repository http://dl.winehq.org/wine-builds/ubuntu/ && \
     apt-get update && \
     apt-get install -y --install-recommends winehq-devel && \
-    apt-get -y remove wget software-properties-common apt-transport-https && \
+    apt-get -y remove wget software-properties-common && \
     apt-get -y autoremove && apt-get clean -y && apt-get autoclean -y && \
     rm -rf var/lib/apt/lists/* var/cache/apt/* var/log/*
 
