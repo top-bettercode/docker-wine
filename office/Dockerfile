@@ -25,4 +25,9 @@ RUN dpkg --add-architecture i386 && \
     apt-get -y autoremove && apt-get clean -y && apt-get autoclean -y && \
     rm -rf var/lib/apt/lists/* var/cache/apt/* var/log/*
 
+ENV LANGUAGE=zh_CN.UTF-8 \
+    LC_ALL=zh_CN.UTF-8 \
+    LANG=zh_CN.UTF-8 \
+    TZ=UTC-8
+    
 ENTRYPOINT ["wine"]
