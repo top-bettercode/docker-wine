@@ -1,4 +1,4 @@
-FROM i386/alpine:edge
+FROM i386/alpine:3.4
 LABEL maintainer='Peter Wu <piterwu@outlook.com>'
 
 RUN apk add --no-cache bash freetype wine && \
