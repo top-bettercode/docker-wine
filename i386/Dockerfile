@@ -3,7 +3,6 @@ LABEL maintainer='Peter Wu <piterwu@outlook.com>'
 
 RUN echo 'deb https://mirrors.aliyun.com/deepin panda main non-free contrib' > /etc/apt/sources.list && \
     apt-get update && \
-    apt --fix-broken -y install && \
     apt-get install -y --no-install-recommends locales && \
     echo 'zh_CN.UTF-8 UTF-8' > /etc/locale.gen && \
     locale-gen && \
