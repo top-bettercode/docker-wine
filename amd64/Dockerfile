@@ -1,7 +1,7 @@
 FROM bestwu/deepin:stable
 LABEL maintainer='Peter Wu <piterwu@outlook.com>'
 
-RUN echo 'deb https://mirrors.aliyun.com/deepin stable main non-free contrib' > /etc/apt/sources.list && \
+RUN echo 'deb http://packages.deepin.com/deepin stable main non-free contrib' > /etc/apt/sources.list && \
     dpkg --add-architecture i386 && \
     apt-get update && \
     apt-get install -y --no-install-recommends locales && \
