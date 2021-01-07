@@ -6,4 +6,4 @@ cd ..
 cd i386
 sudo docker build . -t bestwu/wine -t bestwu/wine:i386
 cd ..
-# sudo docker push bestwu/deepin
+# sudo docker push -a bestwu/wine
